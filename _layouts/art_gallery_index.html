@@ -1,0 +1,19 @@
+---
+layout: single
+classes: wide
+---
+
+{% for gallery in page.galleries %}
+  <div class="feature__item feature__item__photo">
+    <div class="archive__item">
+        <div class="archive__item-teaser">
+          <a href="{{ gallery['url'] }}">
+            <img class="gallery-best-image" src="{{ gallery['url'] }}/thumbs/front_{{ gallery['best_image'] }}">
+          </a>
+          <span class="archive__item-caption" style="z-index: 10">
+            <a href="{{ gallery['url'] }}">{{ gallery["title"] }}</a>
+          </span>
+        </div>
+    </div>
+  </div>
+{% endfor %}

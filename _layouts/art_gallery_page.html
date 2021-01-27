@@ -1,0 +1,13 @@
+---
+layout: single
+classes: wide
+---
+
+<figure class="third">
+  {% for img in page.images %}
+    <a href="{{ img }}" title="{{ page.captions[img] }}">
+    <img src="thumbs/{{ img }}"
+         alt="{% if img.alt %}{{ img.alt }}{% endif %}">
+    </a>
+  {% endfor %}
+</figure>

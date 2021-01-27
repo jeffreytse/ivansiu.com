@@ -1,0 +1,35 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@charset "utf-8";
+
+// Add this before imports
+$tq-blue: #342797;
+$deepmind-blue: #15244a;
+$dark-grey: #4A4A4A;
+$bain-red: #CC0800;
+$rands-grey: #474747;
+$rands-grey-navbar: #F2F3F3;
+$black: #000000;
+
+// Set up main colour
+$main-color: $rands-grey;
+
+// Post headers
+$link-color: $main-color;
+
+.figure-table td {
+  border-bottom: none;
+  text-align: center;
+}
+
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
+@import "minimal-mistakes"; // main partials
+
+// Patches feature__item so that when there is bottom margin when there are more than 3 items (more rows)
+.feature__item__photo {
+  @include breakpoint($small) {
+    margin-bottom: gutter(of 12);
+  }
+}

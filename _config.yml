@@ -1,0 +1,178 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: Ivan Xiao
+subtitle: >- # this means to ignore newlines until next key
+  Tech, Money and Enjoying Life.
+description: Ivan's blog.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://www.ivansiu.com"
+github_username:  iveney
+permalink: /:year/:month/:day/:title
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-relative-links
+  - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-include-cache
+  - jekyll-archives
+  - jekyll-scholar
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
+
+theme: minimal-mistakes-jekyll
+logo: "/images/logo.png"
+minimal_mistakes_skin: default
+read_time: true
+
+mathjax: true
+
+paginate: 9  # amount of posts to show per page
+paginate_path: /page:num/
+
+search: true
+search_full_content: true
+
+# Taxonomy pages
+category_archive_path: "/categories/#"
+tag_archive_path: "/tags/#"
+
+comments:
+  provider: disqus
+  disqus:
+    shortname: iveney # use JEKYLL_ENV=production to actually see it locally
+
+# Footer Links
+footer:
+  links:
+    - label: Twitter
+      url: https://twitter.com/ivanzxiao
+      icon: fab fa-twitter-square
+    - label: GitHub
+      url: https://github.com/iveney
+      icon: fab fa-github-square
+    - label: LinkedIn
+      url: https://www.linkedin.com/in/ivanzxiao/
+      icon: fab fa-linkedin
+
+author:
+  name: Ivan Xiao
+  avatar: /images/ivan-memoji.jpg
+  bio: Engineer. Father. Cat Lover. Guitarist. Ballroom Dancer. Woodworker.
+  twitter: ivanzxiao
+  links:
+    - label: GitHub
+      url: https://github.com/iveney
+      icon: fab fa-fw fa-github
+
+jekyll_compose:
+    auto_open: true
+    default_front_matter:
+      posts:
+        layout: single
+        category: []
+        tags: []
+        header:
+          teaser:
+          overlay_image:
+          caption: "[]()"
+
+include:
+  - _pages
+
+# specify default post Front Matters
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      toc: true
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
+      show_date: true
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+
+# default teasesr image
+teaser: images/teaser.jpg
+
+# Attribute twitter share to my handle
+twitter:
+  username: ivanzxiao
+
+# default image displayed in Open Graph, e.g.,
+og_image: /images/logo.png
+
+# Include your social profile in search results
+social:
+  type:  # Person or Organization (defaults to Person)
+  name:  # If the user or organization name differs from the site's name
+  links:
+    - "https://twitter.com/ivanzxiao"
+    - "https://www.linkedin.com/in/ivanzxiao"
+
+# use jekyll-archives for archives
+category_archive:
+  type: jekyll-archives
+  path: /categories/
+tag_archive:
+  type: jekyll-archives
+  path: /tags/
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layouts:
+    category: archive-taxonomy
+    tag: archive-taxonomy
+  permalinks:
+    category: /categories/:name/
+    tag: /tags/:name/
+
+# latent sematic indexing, used to generated related post
+lsi: true
+
+scholar:
+  style: ieee
+
+# for google analytics
+analytics:
+  provider: "google-gtag"
+  google:
+    tracking_id: "G-0VSNB8LB2P"
+    anonymize_ip: false # default
