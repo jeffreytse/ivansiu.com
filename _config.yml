@@ -18,7 +18,7 @@ subtitle: >- # this means to ignore newlines until next key
   Tech, Money and Enjoying Life.
 description: Ivan's blog.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://www.ivansiu.com"
+url: "https://jeffreytse.github.io/ivansiu.com/"
 github_username:  iveney
 permalink: /:year/:month/:day/:title
 
