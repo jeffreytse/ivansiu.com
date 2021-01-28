@@ -45,7 +45,7 @@ plugins:
 #   - vendor/gems/
 #   - vendor/ruby/
 
-theme: minimal-mistakes-jekyll
+remote_theme: mmistakes/minimal-mistakes@4.21.0
 logo: "/images/logo.png"
 minimal_mistakes_skin: default
 read_time: true
