@@ -1,4 +1,4 @@
-name: Test
+name: Tests
 
 on:
   push:
@@ -6,34 +6,18 @@ on:
       - main
 
 jobs:
-  github_pages:
-    runs-on: ubuntu-latest
+  github-pages:
+    runs-on: ubuntu-16.04
     steps:
-      - name: install packages
-        run: |
-          sudo apt-get update -y -qq
-          sudo apt-get install -y libgsl0-dev libmagick++-dev
-          which gsl-config
-
       - uses: actions/checkout@v2
-
-        # Use GitHub Actions' cache to cache dependencies on servers
-      - uses: actions/cache@v2
+      - uses: actions/cache@v1
         with:
           path: vendor/bundle
           key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
           restore-keys: |
-            ${{ runner.os }}-gems-
-
-            # Use GitHub Deploy Action to build and deploy to Github
-      - uses: jeffreytse/jekyll-deploy-action@v0.1.4
+            ${{ runner.os }}-gems-\
+      - uses: jeffreytse/jekyll-deploy-action@master
         with:
           provider: 'github'
-          token: ${{ secrets.GH_TOKEN }} # It's your Personal Access Token(PAT)
-          branch: 'gh-pages'         # Default is gh-pages for github provider
-          jekyll_src: './'           # Default is root directory
-          jekyll_cfg: '_config.yml'  # Default is _config.yml
-          jekyll_baseurl: ''         # Default is according to _config.yml
-          bundler_ver: '>=0'         # Default is latest bundler version
-          cname: ''                  # Default is to not use a cname
-          actor: ''                  # Default is the GITHUB_ACTOR
+          token: ${{ secrets.GH_TOKEN }}
+          jekyll_src: './'
