@@ -24,8 +24,8 @@ $link-color: $main-color;
   text-align: center;
 }
 
-//@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
-//@import "minimal-mistakes"; // main partials
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
+@import "minimal-mistakes"; // main partials
 
 // Patches feature__item so that when there is bottom margin when there are more than 3 items (more rows)
 //.feature__item__photo {
