@@ -28,8 +28,8 @@ $link-color: $main-color;
 //@import "minimal-mistakes"; // main partials
 
 // Patches feature__item so that when there is bottom margin when there are more than 3 items (more rows)
-.feature__item__photo {
-  @include breakpoint($small) {
-    margin-bottom: gutter(of 12);
-  }
-}
+//.feature__item__photo {
+//  @include breakpoint($small) {
+//    margin-bottom: gutter(of 12);
+//  }
+//}
